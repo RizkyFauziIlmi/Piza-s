@@ -30,8 +30,8 @@ export const Navbar = () => {
   const toast = useToast();
     const navigate = useNavigate()
 
-  const logout = async () => {
-    await signOut(auth)
+  const logout = () => {
+    signOut(auth)
       .then(() => {
         toast({
           title: "Logout Successful",
