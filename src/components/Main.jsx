@@ -54,7 +54,7 @@ export const Main = () => {
 
   const addActivites = async () => {
     if (typeActivities === "jogging") {
-      await updateDoc(doc(db, "infoAccount", auth.currentUser.email), {
+      await updateDoc(doc(db, "infoAccount", localStorage.getItem("email")), {
         activities: arrayUnion({
           type: typeActivities,
           hour: hourJogging,
@@ -139,7 +139,7 @@ export const Main = () => {
           flexDir={"column"}
           p={"0.5rem"}
         >
-          <Heading size={"lg"}>Information User</Heading>
+          <Heading size={"lg"}>User Information</Heading>
           <Text>
             Join at: {new Date(user.metadata.creationTime).toLocaleString()}
           </Text>
@@ -364,13 +364,6 @@ export const Main = () => {
                   />
                 </Flex>
               )}
-              {typeActivities}
-              <br />
-              {hourJogging}
-              <br />
-              {minuteJogging}
-              <br />
-              {new Date(emptyBatteryAt).toLocaleString()}
             </ModalBody>
 
             <ModalFooter>

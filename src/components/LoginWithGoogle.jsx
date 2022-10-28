@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 import { auth, db, provider } from "../firebase/config";
 import { FcGoogle } from "react-icons/fc";
 import { doc, setDoc } from "firebase/firestore";
-import { useAuthState } from "react-firebase-hooks/auth";
 
 export const LoginWithGoogle = ({ secondaryAction = null }) => {
   const toast = useToast();
@@ -39,7 +38,7 @@ export const LoginWithGoogle = ({ secondaryAction = null }) => {
   };
 
   return (
-    <Button leftIcon={<FcGoogle />} onClick={loginWithGoogle}>
+    <Button mt={'0.5rem'} leftIcon={<FcGoogle />} onClick={loginWithGoogle}>
       Login With Google
     </Button>
   );

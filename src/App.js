@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Login } from './components/Login';
 import { Main } from './components/Main';
 import { Navbar } from './components/Navbar';
+import { Register } from './components/Register';
 import { PrivateRoute } from './utils/PrivateRoute';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
             <Route path='/' element={<Main />} />
           </Route>
           <Route path='/login' element={<Login />} />
+          <Route path='/register' element={<Register />} />
         </Routes>
       </BrowserRouter>
     </ChakraProvider>
